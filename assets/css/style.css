@@ -1,0 +1,242 @@
+.ln-height30 {
+    list-style: 30px
+}
+
+.ft-c-red {
+    color: red;
+}
+
+.ft-bld {
+    font-weight: bold;
+}
+
+.ft-c-gray {
+    color: #ccc !important;
+}
+
+.ft-c-green {
+    color: rgb(61, 194, 9) !important;
+}
+
+.ft-c-blue {
+    color: rgb(122, 7, 253) !important;
+}
+
+.ft-bold {
+    font-weight: bold !important;
+}
+
+.ft-c-black {
+    color: black !important;
+}
+
+.ft-c-white {
+    color: white !important;
+}
+
+.bg-c-gray {
+    background: #ccc !important;
+}
+
+.bg-l-gray {
+    background: #F1EFDC !important;
+}
+
+.bg-red {
+    background: rgb(248, 186, 186) !important;
+}
+
+label {
+    margin-bottom: 0 !important;
+}
+
+::placeholder {
+    font-size: 12px !important;
+}
+
+.ft-s-16 {
+    font-size: 16px !important;
+}
+
+.ft-s-20 {
+    font-size: 20px !important;
+}
+
+.ft-w-600 {
+    font-weight: 600;
+}
+
+.page-header {
+    padding: 10px;
+    width: 100%;
+    background: #ccc;
+    margin: 10px 0;
+}
+
+.page-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 700px !important;
+        margin: 1.75rem auto;
+        padding: 20px 40px !important;
+    }
+}
+
+.table-earning tbody td .w-300 {
+    min-width: 100px !important;
+    width: 300px !important;
+    white-space: normal !important;
+}
+
+.data-pos {
+    position: relative;
+}
+
+.data-pos datalist {
+    position: absolute;
+    left: 0;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background: #ccc !important;
+    color: black !important;
+    border: 1px solid rgb(151, 150, 150) !important;
+}
+
+.prod-cat input {
+    text-transform: uppercase;
+}
+
+.column-gap {
+    padding: 5px;
+}
+
+.widget-box {
+    background: #ffffff;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px #333;
+}
+
+.widget-inner {
+    padding: 20px;
+}
+
+.widget-inner img {
+    height: 30px;
+}
+
+.widget-inner .heading {
+    line-height: 30px;
+    font-size: 20px;
+    padding-left: 20px;
+    color: #037785;
+}
+
+.widget-inner .table td,
+.table th {
+    padding: 5px;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.brd-bottom {
+    border-bottom: 1px solid #ccc;
+}
+
+.table td,
+.table th {
+    padding: 5px !important;
+    vertical-align: middle !important;
+}
+
+.upperCase {
+    text-transform: uppercase;
+}
+
+.card-body {
+    padding: 0 10px !important;
+}
+
+.table td,
+.table th {
+    vertical-align: top !important;
+}
+
+.disable-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    color: #ccc;
+    /* Standard syntax */
+}
+
+.inv-title {
+    border-top: 3px solid #333;
+    width: 130px;
+    float: right;
+    clear: both;
+}
+
+.box-ralign h1 {
+    font-weight: 700;
+}
+
+.piv .table tr td {
+    vertical-align: middle !important;
+}
+
+.sum-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pay-title {
+    border-top: 3px solid #333;
+    width: 300px;
+    float: right;
+    clear: both;
+}
+
+.bg-none {
+    background-color: transparent !important;
+}
+
+.border-allnone {
+    border: transparent !important;
+}
+
+.inner-table table {
+    border-collapse: collapse !important;
+}
+
+.inner-table table td,
+.inner-table table th {
+    border: none !important;
+    padding: 0 5px !important;
+}
+
+.bank-search .card {
+    border-radius: 15px !important;
+    background: #ccc;
+}
+
+.region .form-control {
+    font-weight: bold !important;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

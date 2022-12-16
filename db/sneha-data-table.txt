@@ -1,0 +1,119 @@
+
+CREATE TABLE `login_user` (
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `userfname` varchar(100) NOT NULL,
+  `userlname` varchar(100) NOT NULL,
+  `userpassword` varchar(15) NOT NULL,
+  `useremail` varchar(100) NOT NULL,
+  `adminlevel` int(5) NOT NULL,
+	PRIMARY KEY(`userid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `login_user` (`userid`, `username`, `userfname`, `userlname`, `userpassword`, `useremail`, `adminlevel`) VALUES
+(1, 'sivakumar.mani', 'Sivakumar ', 'Mani', 'Welcome@1', 'sivakumar.pmani@gmail.com', 1),
+(2, 'karthikeyan.raja', 'Karthikeyan', 'Raja', 'Welcome@1', 'sivakumar.pmani@gmail.com', 1),
+(3, 'raja.mani', 'Raja ', 'Mani', 'Welcome@1', 'raja.pmani@gmail.com', 2);
+(3, 'raja.mani', 'Raja ', 'Mani', 'Welcome@1', 'raja.pmani@gmail.com', 2);
+
+
+CREATE TABLE `complaints` (
+`complaint_id` int NOT NULL AUTO_INCREMENT,
+`complaint_name` varchar(256) NOT NULL,
+`complaint_subject` varchar(256) NOT NULL,
+`complaint_email` varchar(256) NOT NULL,
+`complaint_bname` varchar(256) NOT NULL,
+`complaint_baddress` varchar(256) NOT NULL,
+`complaint_number` varchar(15),
+`complaint_whatsup` varchar(15),
+`complaint_date` date NOT NULL,
+`complaint_datetime` varchar(30) NOT NULL,
+`complaint_status` varchar(15) NOT NULL,
+`complaint_comments` varchar(1000),
+PRIMARY KEY(`complaint_id`)
+)ENGINE = MyISAM DEFAULT CHARSET = utf8;
+
+
+CREATE TABLE `employee` (
+  `emp_id` int NOT NULL AUTO_INCREMENT,
+  `emp_code` varchar(25) NOT NULL,
+  `emp_fname` varchar(25) NOT NULL,
+  `emp_lname` varchar(25) NOT NULL,
+  `emp_marital_status` varchar(10) NOT NULL,
+  `emp_sname` varchar(100) NOT NULL,
+  `emp_dob` date NOT NULL,
+  `emp_doj` date NOT NULL,
+  `emp_dor` date NOT NULL,
+  `emp_mobileno` int(50) NOT NULL,
+  `emp_amobileno` int(50) NOT NULL,
+  `emp_paddress` varchar(250) NOT NULL,
+  `emp_taddress` varchar(250) NOT NULL,
+  `emp_salary` int(50) NOT NULL,
+  `emp_office_email` varchar(250) NOT NULL,
+  `emp_bank_details` varchar(250) NOT NULL,
+  `emp_office_notes` varchar(250) NOT NULL,
+  `emp_dept` varchar(100) NOT NULL,
+  `emp_status` varchar(100) NOT NULL,
+  `emp_qualification` varchar(100) NOT NULL,
+  `emp_profile_img_path` varchar(1000) NOT NULL,
+  `emp_profile_img_name` varchar(250) NOT NULL,
+  `emp_aadhar` int(15) NOT NULL,
+   PRIMARY KEY(`emp_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;	
+
+
+
+CREATE TABLE `complaint_work_order` (
+`cwo_id` int NOT NULL AUTO_INCREMENT,
+`cwo_code` varchar(25) NOT NULL,	
+`emp_code` varchar(25) NOT NULL,
+`tech_name` varchar(100) NOT NULL,
+`comp_code` varchar(25) NOT NULL,
+`cwo_date` date NOT NULL,
+`cwo_timedate` varchar(25) NOT NULL,
+`cwo_amount` int(15) NOT NULL,
+`cwo_status` varchar(25) NOT NULL,
+`cwo_material_given` varchar(10) NOT NULL,
+`cwo_remedies` varchar(1000) NULL,
+PRIMARY KEY(`cwo_id`)
+)ENGINE = MyISAM DEFAULT CHARSET = utf8;
+
+
+CREATE TABLE `cwo_support_docs` (
+`attach_id` int NOT NULL AUTO_INCREMENT,
+`cwo_code` varchar(25) NOT NULL,	
+`comp_code` varchar(25) NOT NULL,
+`sender_emp_code` varchar(25) NOT NULL,
+`uploded_emp_code` varchar(25) NOT NULL,
+`send_staff_name` varchar(100) NOT NULL,
+`uploded_staff_name` varchar(100) NOT NULL,
+`doc_received_date` date NOT NULL,
+`doc_updated_date` date NOT NULL,
+`docs_img_path` varchar(1000) NOT NULL,
+`docs_img_name` varchar(250) NOT NULL,
+`attach_comments` varchar(1000) NULL,
+PRIMARY KEY(`attach_id`)
+)ENGINE = MyISAM DEFAULT CHARSET = utf8;
+
+
+https://ifsc.razorpay.com/CIUB0000432
+
+{"SWIFT":null,
+"CITY":"CHENNAI",
+"UPI":true,
+"ISO3166":"IN-TN",
+"NEFT":true,
+"IMPS":true,
+"RTGS":true,
+"CENTRE":"KANCHEEPURAM",
+"ADDRESS":"1 25, BASKAR PLAZA SIXTH MAIN ROAD, NEW COLONY, CHROMPET CHENNAI 600044 KANCHEEPURAM DIST",
+"BRANCH":"NEW COLONY CHROMPET",
+"MICR":"600054082",
+"CONTACT":"+919362692987",
+"DISTRICT":"KANCHEEPURAM",
+"STATE":"TAMIL NADU",
+"BANK":"City Union Bank",
+"BANKCODE":"CIUB",
+"IFSC":"CIUB0000432"}
+
+https://www.digitalocean.com/community/tutorials/how-to-use-web-apis-in-php-8-0

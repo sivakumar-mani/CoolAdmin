@@ -1,0 +1,281 @@
+CREATE TABLE `login_user` (
+  `userid` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `userfname` varchar(100) NOT NULL,
+  `userlname` varchar(100) NOT NULL,
+  `userpassword` varchar(15) NOT NULL,
+  `useremail` varchar(100) NOT NULL,  
+ `admin_level` int(10) NOT NULL,
+ PRIMARY KEY(`userid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `login_permission` (
+  `lpid` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `dept_accounts` varchar(10) NOT NULL,
+  `dept_hr` varchar(10) NOT NULL,
+  `dept_complaint` varchar(10) NOT NULL,
+  `dept_store` varchar(10) NOT NULL,
+  `dept_customer` varchar(10) NOT NULL,
+  `admin_accounts` varchar(10) NOT NULL,
+  `admin_hr` varchar(10) NOT NULL,
+  `admin_complaint` varchar(10) NOT NULL,
+  `admin_store` varchar(10) NOT NULL,
+  `admin` varchar(10) NOT NULL, 
+  `admin_customer` varchar(10) NOT NULL,
+`superadmin` varchar(10) NOT NULL,
+ PRIMARY KEY(`lpid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `login_permission`(`lpid`, `username`, `dept_accounts`, `dept_hr`, `dept_complaint`, `dept_store`, `dept_customer`, `admin_accounts`, `admin_hr`, `admin_complaint`, `admin_store`, `admin`, `admin_customer`) VALUES ('2','siva.m','no','yes','yes','yes','yes','yes','yes','yes','yes','yes','yes');
+
+CREATE TABLE `account_ledger` (
+  `ac_trans_id` int NOT NULL AUTO_INCREMENT,
+  `ac_trans_date` date NOT NULL,
+  `ac_trans_type` varchar(25) NOT NULL,
+  `ac_trans_mode` varchar(25) NOT NULL,
+  `trans_name` varchar(100) NOT NULL,
+  `ac_trans_details` varchar(256) NOT NULL,
+  `ac_trans_no` varchar(100) NOT NULL,
+  `ac_channel` varchar(25) NOT NULL,
+  `ac_amount` int(50) NOT NULL,
+  `ac_balance` int(50) NOT NULL,
+  PRIMARY KEY(`ac_trans_id`)
+)ENGINE = MyISAM DEFAULT CHARSET = utf8;
+
+CREATE TABLE `complaint_register` (
+  `comp_id` int NOT NULL AUTO_INCREMENT,
+  `comp_code` varchar(25) NOT NULL,
+  `comp_name` varchar(256) NOT NULL,
+  `comp_subject` varchar(256) NOT NULL,
+  `comp_email` varchar(256) NOT NULL,
+  `comp_bankname` varchar(256) NOT NULL,
+  `comp_branch` varchar(256) NOT NULL,
+  `comp_baddress` varchar(256) NOT NULL,
+  `comp_number` varchar(15) DEFAULT NULL,
+  `comp_date` date NOT NULL,
+  `comp_datetime` varchar(30) NOT NULL,
+  `comp_status` varchar(15) NOT NULL,
+  `comp_msg` varchar(1000) DEFAULT NULL,
+   PRIMARY KEY(`comp_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `complaint_work_order` (
+  `cwo_id` int NOT NULL AUTO_INCREMENT,
+  `cwo_code` varchar(25) NOT NULL,
+  `emp_code` varchar(25) NOT NULL,
+  `tech_name` varchar(100) NOT NULL,
+  `comp_code` varchar(25) NOT NULL,
+  `cwo_date` date NOT NULL,
+  `cwo_timedate` varchar(25) NOT NULL,
+  `cwo_amount` int(15) NOT NULL,
+  `cwo_status` varchar(25) NOT NULL,
+  `cwo_material_given` varchar(10) NOT NULL,
+  `cwo_remedies` varchar(1000) DEFAULT NULL,
+   PRIMARY KEY(`cwo_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `cwo_support_docs` (
+  `attach_id` int NOT NULL AUTO_INCREMENT,
+  `cwo_code` varchar(25) NOT NULL,
+  `comp_code` varchar(25) NOT NULL,
+  `sender_emp_code` varchar(25) NOT NULL,
+  `uploded_emp_code` varchar(25) NOT NULL,
+  `send_staff_name` varchar(100) NOT NULL,
+  `uploded_staff_name` varchar(100) NOT NULL,
+  `doc_received_date` date NOT NULL,
+  `doc_updated_date` date NOT NULL,
+  `docs_img_path` varchar(1000) NOT NULL,
+  `docs_img_name` varchar(250) NOT NULL,
+  `attach_comments` varchar(1000) DEFAULT NULL,
+   PRIMARY KEY(`attach_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `employee` (
+  `emp_id` int NOT NULL AUTO_INCREMENT,
+  `emp_code` varchar(25) NOT NULL,
+  `emp_fname` varchar(25) NOT NULL,
+  `emp_lname` varchar(25) NOT NULL,
+  `emp_marital_status` varchar(10) NOT NULL,
+  `emp_sname` varchar(100) NOT NULL,
+  `blood_group` varchar(25) NOT NULL,
+  `emp_dob` date NOT NULL,
+  `emp_doj` date NOT NULL,
+  `emp_dor` date NOT NULL,
+  `emp_mobileno` varchar(20) NOT NULL,
+  `emp_amobileno` varchar(20) NOT NULL,
+  `emp_paddress` varchar(250) NOT NULL,
+  `emp_taddress` varchar(250) NOT NULL,
+  `emp_salary` int(50) NOT NULL,
+  `emp_office_email` varchar(250) NOT NULL,
+  `emp_bank_details` varchar(250) NOT NULL,
+  `emp_office_notes` varchar(250) NOT NULL,
+  `emp_dept` varchar(100) NOT NULL,
+  `emp_status` varchar(100) NOT NULL,
+  `emp_qualification` varchar(100) NOT NULL,
+  `emp_profile_img_path` varchar(1000) NOT NULL,
+  `emp_profile_img_name` varchar(250) NOT NULL,
+  `emp_aadhar` varchar(20) NOT NULL,
+  `emp_desig` varchar(50) NOT NULL,
+ PRIMARY KEY(`emp_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `item` (
+  `iid` int NOT NULL AUTO_INCREMENT,
+  `itemid` varchar(100) NOT NULL,
+  `itemname` varchar(100) NOT NULL,
+ PRIMARY KEY(`iid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;                                                                                     
+
+
+CREATE TABLE `brands` (
+  `bid` int NOT NULL AUTO_INCREMENT,
+  `brandsid` varchar(100) NOT NULL,
+  `brandsname` varchar(100) NOT NULL,
+ PRIMARY KEY(`bid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE `category` (
+  `catid` int NOT NULL AUTO_INCREMENT,
+  `categoryId` varchar(100) NOT NULL,
+  `categoryname` varchar(100) NOT NULL,
+  PRIMARY KEY(`catid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `vendor_details` (
+  `vid` int NOT NULL AUTO_INCREMENT,
+  `vendorid` varchar(100) NOT NULL,
+  `vendorname` varchar(100) NOT NULL,
+  `vendorcompanyname` varchar(100) NOT NULL,
+  `vendoraddress` varchar(1000) NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `pincode` int(10) NOT NULL,
+  `gstno` varchar(50) NOT NULL,
+  `pan` varchar(50) NOT NULL,
+  `licenceno` varchar(50) NOT NULL,
+  `mobile` varchar(25) NOT NULL,
+  `mobile1` varchar(25) NOT NULL,
+  `landline` varchar(25) NOT NULL,
+  `emailid` varchar(100) NOT NULL,
+PRIMARY KEY(`vid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `purchased_invoice` (
+  `ivid` int NOT NULL AUTO_INCREMENT,
+  `invoiceid` varchar(100) NOT NULL,
+  `vendorid` varchar(100) NOT NULL,
+  `vendorcompanyname` varchar(100) NOT NULL,
+  `invoicedate` date NOT NULL,
+  `invoiceno` varchar(25) NOT NULL,
+  `billno` varchar(25) NOT NULL,
+  `totalinvoiceamount` int(25) NOT NULL,
+  `paidamount` int(25) NOT NULL,
+  `totaldiscount` int(25) NOT NULL,
+  `totalgst` int(25) NOT NULL,
+  `docspath` varchar(600) NOT NULL,
+  `docsname` varchar(100) NOT NULL,
+PRIMARY KEY(`ivid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `stock_inventory` (
+  `sid` int NOT NULL AUTO_INCREMENT,
+  `stockcode` varchar(100) NOT NULL,
+  `stockname` varchar(100) NOT NULL,
+  `quantity` varchar(100) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `mrp` int(25) NOT NULL,
+PRIMARY KEY(`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `purchased_items_inventory` (
+  `pid` int NOT NULL AUTO_INCREMENT,
+  `invoiceid` varchar(100) NOT NULL,
+  `vendorid` varchar(100) NOT NULL,
+  `purchaseid` varchar(100) NOT NULL,
+  `brandsname` varchar(100) NOT NULL,
+  `itemname` varchar(100) NOT NULL,
+  `categoryname` varchar(100) NOT NULL,
+  `serialnumber` varchar(1000) NOT NULL,
+  `mrp` int(25) NOT NULL,
+  `quantity` int(25) NOT NULL,
+  `discount` int(25) NOT NULL,
+  `totalprice` int(25) NOT NULL,
+  `movement` varchar(10) NOT NULL,
+PRIMARY KEY(`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `purchase_payment` (
+  `ppid` int NOT NULL AUTO_INCREMENT,
+  `invoiceid` varchar(100) NOT NULL,
+  `vendorid` varchar(100) NOT NULL,
+  `ac_trans_id` varchar(25) NOT NULL,
+  `trans_date` date NOT NULL,
+  `trans_type` varchar(25) NOT NULL,
+  `trans_mode` varchar(25) NOT NULL,
+  `trans_name` varchar(100) NOT NULL,  
+  `ac_trans_no` varchar(100) NOT NULL,
+  `ac_amount` int(50) NOT NULL, 
+   PRIMARY KEY(`ppid`)
+)ENGINE = MyISAM DEFAULT CHARSET = utf8;
+
+CREATE TABLE `used_material_inventory` (
+  `umid` int NOT NULL AUTO_INCREMENT,
+  `comp_code` varchar(25) NOT NULL,
+  `wo_code` varchar(25) NOT NULL,
+  `stockcode` varchar(100) NOT NULL,
+  `stockname` varchar(100) NOT NULL,
+  `quantity` varchar(100) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `mrp` int(25) NOT NULL,
+   PRIMARY KEY(`umid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `billing_material_inventory` (
+  `bmid` int NOT NULL AUTO_INCREMENT,
+  `comp_code` varchar(25) NOT NULL,
+  `wo_code` varchar(25) NOT NULL,
+  `stockcode` varchar(100) NOT NULL,
+  `stockname` varchar(100) NOT NULL,
+  `quantity` varchar(100) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `price` int(25) NOT NULL,
+   PRIMARY KEY(`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `regional_list` (
+  `rlid` int NOT NULL AUTO_INCREMENT,
+  `rolCode` varchar(25) NOT NULL,
+  `nameRegion` varchar(25) NOT NULL,
+  `inchargeRegion`  varchar(25) NOT NULL,
+ PRIMARY KEY(`rid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `regional_office` (
+  `roid` int NOT NULL AUTO_INCREMENT,
+  `rocode` varchar(25) NOT NULL,
+  `bankcode` varchar(25) NOT NULL,
+  `ifsc` varchar(25) NOT NULL,
+  `bank` varchar(25) NOT NULL,
+  `branch` varchar(25) NOT NULL,
+  `region` varchar(10) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `city` varchar(25) NOT NULL,
+  `district` varchar(25) NOT NULL,
+  `state` varchar(25) NOT NULL,
+  `MICR` int(25) NOT NULL,
+  `contactNo1` varchar(25) NOT NULL,
+  `contactNo2` varchar(25) NOT NULL,
+  `mobilenumber` varchar(25) NOT NULL,
+  `alternatenumber` varchar(25) NOT NULL,
+  `contactPerson` varchar(25) NOT NULL,
+  `bankemailid` varchar(20) NOT NULL,
+  `region_incharge`  varchar(50) NOT NULL,
+  `status` varchar(25) NOT NULL,
+ PRIMARY KEY(`roid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
